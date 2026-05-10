@@ -1,76 +1,34 @@
-﻿# Dotenv ðŸ“‹
+# dotenv — ARCHIVED 🪦
 
-<div align="center">
+> **This repository has been archived.**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)]()
-[![Python](https://img.shields.io/badge/python-3.8%2B-brightgreen)](https://python.org)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Dependencies](https://img.shields.io/badge/dependencies-zero-lightgrey)]()
+The functionality previously in `dotenv` has been consolidated into **[clawkit](https://github.com/Luv-Goel/clawkit)** — the unified DevOps CLI toolkit.
 
-**.env file toolkit â€” load, validate, merge, diff, template, and sort. Zero dependencies.**
+## What Was This?
 
-</div>
+**.env file toolkit — load, validate, merge, diff, template, sort**
 
----
+## Why Archived?
 
-## Features
+Rather than maintaining a dozen tiny single-purpose Python packages, all CLI tooling now lives under the `clawkit` umbrella. This means:
 
-- **Load & parse** â€” Read `.env` files with proper quoting, variable expansion, and multiline support
-- **Validation** â€” Check for missing vars, invalid keys, syntax errors, and reference cycles
-- **Merge** â€” Combine multiple `.env` files with conflict resolution
-- **Diff** â€” Compare `.env` files and show added/removed/changed entries
-- **Templating** â€” Render `.env` as template with `{{VAR}}` substitution
-- **Sort** â€” Alphabetize keys for clean, consistent files
-- **Validate against schema** â€” Check `.env` against a reference `.env.example`
-- **Zero dependencies** â€” Pure Python 3.8+, no pip packages required
+- ✅ One install: `pip install clawkit`
+- ✅ Unified CLI: `clawkit sift`, `clawkit dotenv`, `clawkit mark`, etc.
+- ✅ Shared utilities and consistent interface
+- ✅ Faster development, fewer dependencies to track
 
-## Quick Start
+## Migration
 
 ```bash
-pip install dotenv-toolkit
+# Before (old way)
+pip install dotenv
 
-# Load and display a .env file
-dotenv load .env
-
-# Validate against schema
-dotenv check .env --against .env.example
-
-# Merge files
-dotenv merge .env .env.local .env.prod --output .env.merged
-
-# Diff two files
-dotenv diff .env.staging .env.production
-
-# Template substitution
-dotenv template .env.tpl --output .env
-
-# Sort keys alphabetically
-dotenv sort .env --output .env.sorted
+# After (new way)  
+pip install clawkit
+clawkit dotenv --help
 ```
 
-## CLI Reference
+👉 **Head to [clawkit](https://github.com/Luv-Goel/clawkit)** for the active, maintained version.
 
-| Command | Description |
-|---------|-------------|
-| `dotenv load [file]` | Parse and display .env file contents |
-| `dotenv check [file]` | Validate .env file (syntax, vars, schema) |
-| `dotenv merge [files...]` | Merge multiple .env files |
-| `dotenv diff [a] [b]` | Show difference between two .env files |
-| `dotenv template [file]` | Substitute `{{VAR}}` templates with values |
-| `dotenv sort [file]` | Sort environment variable keys |
-
-## Architecture
-
-```
-dotenv/
-â”œâ”€â”€ dotenv/
-â”‚   â”œâ”€â”€ __init__.py    # Exports and version
-â”‚   â”œâ”€â”€ cli.py         # CLI entry point
-â”‚   â””â”€â”€ core.py        # Parsing, validation, merge, diff, template
-â”œâ”€â”€ pyproject.toml
-â””â”€â”€ README.md
-```
-
-## License
-
-MIT â€” see [LICENSE](LICENSE).
+---
+*Archived on May 10, 2026 — functionality merged into clawkit*
